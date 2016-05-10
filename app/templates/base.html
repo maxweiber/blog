@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title> {{ title }},Hello! </title>
+    {% else %}
+    <title> Welcome to Blog </title>
+</head>
+<body>
+<div>Blog: <a href="/index">Home</a></div>
+<hr style="height:5px;border:none;border-top:5px ridge green;" />
+{% block content %}{% endblock %}
+</body>
+</html>
