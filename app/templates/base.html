@@ -6,10 +6,19 @@
     <title> {{ title }},Hello! </title>
     {% else %}
     <title> Welcome to Blog </title>
+    {% endif %}
 </head>
 <body>
 <div>Blog: <a href="/index">Home</a></div>
 <hr style="height:5px;border:none;border-top:5px ridge green;" />
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <ul>{% for message in messages %}
+    <li>{{ message }}</li>
+    </ul>
+{% endfor %}
+{% endif %}
+{% endwith %}
 {% block content %}{% endblock %}
 </body>
 </html>
